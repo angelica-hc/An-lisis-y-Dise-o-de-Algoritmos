@@ -1,18 +1,24 @@
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) {
 
+        // PROBLEMA 1: MOCHILA
+
+
         System.out.println("=== MOCHILA FRACCIONAL ===");
 
         Objeto[] objetos = {
-
                 new Objeto("A", 60, 10),
                 new Objeto("B", 100, 20),
                 new Objeto("C", 120, 30)
-
         };
 
         MochilaFraccional.resolver(objetos, 50);
+
+        // PROBLEMA 2: ANTENAS
+
 
         System.out.println("\n=== COBERTURA DE ANTENAS ===");
 

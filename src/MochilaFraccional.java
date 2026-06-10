@@ -5,7 +5,7 @@ public class MochilaFraccional {
 
     public static void resolver(Objeto[] objetos, double capacidad) {
 
-        // Ordenar por valor/peso de mayor a menor
+        // ordenar por mayor relación valor/peso (greedy)
         Arrays.sort(objetos,
                 Comparator.comparingDouble(Objeto::getRelacion).reversed());
 
@@ -15,26 +15,25 @@ public class MochilaFraccional {
 
         for (Objeto obj : objetos) {
 
-            if (capacidad == 0)
+            // si no hay capacidad, terminar
+            if (capacidad <= 0)
                 break;
 
-            // Si entra completo
+            // caso 1: entra completo
             if (obj.peso <= capacidad) {
 
-                System.out.println(obj.nombre + " completo");
+                System.out.println(obj.nombre + " -> completo");
 
                 capacidad -= obj.peso;
                 valorTotal += obj.valor;
 
-            } else {
+            } 
+            // caso 2: tomar fracción
+            else {
 
-                // Tomar fracción
                 double fraccion = capacidad / obj.peso;
 
-                System.out.println(
-                        capacidad + "/" + obj.peso
-                                + " parte de "
-                                + obj.nombre);
+                System.out.println(obj.nombre + " -> fracción " + capacidad + "/" + obj.peso);
 
                 valorTotal += obj.valor * fraccion;
 

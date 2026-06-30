@@ -13,7 +13,7 @@ for(int i=2;i<=n; i++){
 }
   cout<<"\nformas posibles:" << dp[n]<<endl;
   cout <<"tabla dp: [";
-  for (inti=0; i<=n; i++){
+  for (int i=0; i<=n; i++){
     cout << dp [i];
     if(i !=n)
       cout<<", ";
